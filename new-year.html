@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Countdown</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #FFF;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .countdown {
+            text-align: center;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <h1 id="clock"></h1>
+        <h2 id="year"></h2>
+        <h3 id="message"></h3>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script>
+        // Function to create falling bubbles animation
+        function createFallingBubbles() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const bubbles = [];
+            for (let i = 0; i < 100; i++) {
+                bubbles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 10 + 5,
+                    color: 'rgba(255, 255, 255, 0.5)',
+                    vy: Math.random() * 3 + 2,
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < bubbles.length; i++) {
+                    ctx.beginPath();
+                    ctx.arc(bubbles[i].x, bubbles[i].y, bubbles[i].radius, 0, Math.PI * 2);
+                    ctx.fillStyle = bubbles[i].color;
+                    ctx.fill();
+                    ctx.closePath();
+
+                    bubbles[i].y += bubbles[i].vy;
+                    if (bubbles[i].y > canvas.height) {
+                        bubbles[i].y = 0;
+                    }
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        // Function to update the clock
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const year = now.getFullYear();
+
+            document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('year').innerText = `Year ${year}`;
+
+            // Check if it's New Year's Day
+            if (now.getMonth() === 0 && now.getDate() === 1) {
+                document.getElementById('message').innerText = 'Happy New Year!';
+                createFallingBubbles();
+            } else {
+                document.getElementById('message').innerText = '';
+            }
+        }
+
+        // Update the clock and start the background animation
+        window.onload = function() {
+            updateClock();
+            setInterval(updateClock, 1000);
+        };
+    </script>
+</body>
+</html>
