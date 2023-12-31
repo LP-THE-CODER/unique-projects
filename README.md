@@ -42,8 +42,6 @@ The web application will automatically update the clock and display a countdown 
 
 
 
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
