@@ -34,9 +34,13 @@ This project is a New Year Countdown web application that displays the current t
 
 The web application will automatically update the clock and display a countdown to New Year's Day. On New Year's Day, enjoy the animated falling bubbles.
 
+
+
 ## Screenshots and Videos
 
-![Screenshot 1](Screenshot 2024-01-01 010738.png)
+![Screenshot 1](images/Screenshot%202024-01-01%20010738.png)
+
+
 
 
 
