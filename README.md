@@ -25,10 +25,10 @@ This project is a New Year Countdown web application that displays the current t
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/new-year-countdown.git
+    git clone https://github.com/LP-THE-CODER/new-year.git
     ```
 
-2. Open the `index.html` file in a web browser.
+2. Open the `new-year.html` file in a web browser.
 
 ## Usage
 
