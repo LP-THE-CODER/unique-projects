@@ -36,7 +36,7 @@ The web application will automatically update the clock and display a countdown 
 
 ## Screenshots and Videos
 
-![Screenshot 1](.png)
+![Screenshot 1](Screenshot 2024-01-01 010738.png)
 
 
 
