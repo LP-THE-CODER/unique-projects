@@ -8,7 +8,7 @@ A festive New Year Countdown project with a clock display and falling bubbles an
 - [Setup](#setup)
 - [Usage](#usage)
 - [Screenshots and Videos](#screenshots-and-videos)
-- [License](#license)
+
 
 ## Introduction
 
@@ -42,6 +42,4 @@ The web application will automatically update the clock and display a countdown 
 
 
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
